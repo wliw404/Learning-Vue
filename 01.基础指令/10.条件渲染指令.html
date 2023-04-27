@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+</head>
+<body>
+<!--希望vue能够控制下面的这个div，帮我们把数据填充刀div内部-->
+<div id="app">
+    <div v-if="flag">这是v-if</div>
+    <div v-show="flag">这是v-show</div>
+    <button @click="change">true</button>
+    <button @click="change1">false</button>
+
+    <hr>
+
+    <div v-if="type == 'A'">优秀</div>
+    <div v-else-if="type == 'B'">良好</div>
+    <div v-else-if="type == 'C'">一般</div>
+    <div v-else="type == 'D'">差</div>
+</div>
+<!--1.导入vue的库文件-->
+<script src="../lib/vue-2.6.12.js"></script>
+<!--2.创建Vue的实例对象-->
+<script>
+  //创建Vue的实例对象
+  const vm = new Vue({
+      //el属性是固定写法,表示当前的vm实例要控制页面上的哪个区域
+      // 接收的值是一个选择器
+      el:'#app',
+      //data对象就是要渲染到页面上的数据
+      data:{
+          username:'zhangsan',
+          //如果flag为true则显示被控制的元素,否则隐藏
+          flag:false,
+          type:'A'
+      },
+      methods:{
+          change(){
+              console.log(this)
+              this.flag = true
+          },
+          change1(){
+              this.flag = false
+          },
+      }
+  })
+</script>
+
+
+
+
+</body>
+</html>

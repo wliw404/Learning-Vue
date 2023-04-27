@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reduce</title>
+</head>
+<body>
+
+</body>
+<script>
+    const arr = [
+        {id: 1, name: '西瓜', state: true, price: 10, count: 1},
+        {id: 2, name: '草莓', state: true, price: 15, count: 3},
+        {id: 3, name: '葡萄', state: true, price: 13, count: 5},
+        {id: 4, name: '苹果', state: false, price: 7, count: 3},
+    ]
+    //需求：把购物车数组中，已勾选的水果总价累加起来
+    let sum = 0 //总价
+    // arr.filter(item=>item.state).forEach(item => {
+    //     sum += item.price * item.count
+    // })
+    //  console.log(sum)
+
+    // //.reduce((累加的结果,当前的循环项)=>{},初始值)
+    // const res = arr.filter(item=>item.state).reduce((sum,item)=>{
+    //     return sum += item.price * item.count
+    // },0)
+    const res = arr.filter(item => item.state).reduce((sum, item) => sum += item.price * item.count, 0)
+
+    console.log(res)
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>some</title>
+</head>
+<body>
+
+</body>
+<script>
+    const arr = ['小明','小红','小东','小王','小华','小莉']
+    //forEach循环，一旦开始无法中途停止
+    // arr.forEach((item,index)=>{
+    //     console.log(1)
+    //     if(item === '小王'){
+    //         console.log(index)
+    //         return
+    //     }
+    // })
+    arr.some((item, index) => {
+        if (item === '小王') {
+            console.log(index)
+            //在找到对应项之后，可以通过return true的固定语法 来终止some循环
+            return true
+        }
+    })
+</script>
+</html>

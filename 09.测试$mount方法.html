@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+{{username}}
+</div>
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+    const vm = new Vue({
+        data:{
+            username:'admin'
+        }
+    })
+    vm.$mount('#app')
+</script>
+</body>
+</html>

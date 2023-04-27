@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="username">
+</div>
+<script src="./lib/vue-2.6.12.js"></script>
+<script src="./lib/jquery-3.5.1.min.js"></script>
+<script>
+  const vm = new Vue({
+      el:'#app',
+      data:{
+          username:'zhangsan'
+      },
+      //所有的侦听器，都应该被定义到watch节点下
+      watch: {
+          info: {
+              handler(newVal) {
+                  console.log(newVal)
+              },
+              //immediate 选项默认值是false
+              //immediate 的作用是:控制侦听器是否默认触发一次
+              immediate: true,
+              //开启深度监听,只要对象中任何一个属性变化，都会触发“对象的侦听器”
+              deep: true
+          },
+          //如果要侦听的是对象的子属性的变化，则必须包裹一层单引号
+          'info.username'(newVal) {
+              console.log(newVal)
+          }
+      }
+  })
+</script>
+
+
+
+
+</body>
+</html>

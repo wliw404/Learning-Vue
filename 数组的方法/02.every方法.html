@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>every</title>
+</head>
+<body>
+
+</body>
+<script>
+    const arr = [
+        {id:1,name:'西瓜',state:true},
+        {id:2,name:'草莓',state:true},
+        {id:3,name:'葡萄',state:false},
+        {id:4,name:'苹果',state:true},
+    ]
+    //需求: 判断数组中,水果是否被全选
+    //every 返回值是布尔值
+    const res = arr.every(item => item.state)
+    console.log(res)
+</script>
+</html>

@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
-*/*/dist
-vue2/
-vue3/
+dist/
+/vue2/
+/vue3/
 
 # local env files
 .env.local

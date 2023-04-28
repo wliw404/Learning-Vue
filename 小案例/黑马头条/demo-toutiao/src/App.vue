@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+<!--    路由占位符-->
+    <router-view></router-view>
+<!--    Tabbar 区域-->
+    <van-tabbar route :placeholder="true">
+      <van-tabbar-item icon="wap-home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="user-circle-o" to="/user">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
+
+<script>
+
+</script>
 
 <style lang="less">
 
